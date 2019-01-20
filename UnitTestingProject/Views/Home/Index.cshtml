@@ -1,0 +1,19 @@
+﻿@using System.Collections;
+
+
+
+    @{
+        Layout = null;
+    }
+
+        <h2>Index</h2>
+        @foreach (var p in Model)
+        {
+            <div>@p.Name, @($"{p.Price:C2}")</div>
+
+        }
+        <div>
+            <a asp-action="AddProduct">Add Product</a>
+        </div>
+
+
