@@ -6,7 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace UnitTestingProject.Models
 {
-    public class SimpleRepository
+    public class SimpleRepository : IRepository
     {
         private static SimpleRepository sharedRepository = new SimpleRepository();
         public static SimpleRepository ShaRepository => sharedRepository;
@@ -30,6 +30,7 @@ namespace UnitTestingProject.Models
         }
 
         public IEnumerable<Product> Products => products.Values;
+
         public void AddProduct(Product p) => products.Add(p.Name, p);
     }
 }

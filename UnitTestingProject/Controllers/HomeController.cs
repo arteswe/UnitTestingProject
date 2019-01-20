@@ -5,7 +5,7 @@ namespace UnitTestingProject.Controllers
 {
     public class HomeController : Controller
     {
-        SimpleRepository Repository = SimpleRepository.ShaRepository;
+        public IRepository Repository = SimpleRepository.ShaRepository;
 
         public IActionResult Index()
             => View(SimpleRepository.ShaRepository.Products);
