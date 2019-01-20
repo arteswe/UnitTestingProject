@@ -1,14 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using UnitTestingProject.Models;
 
 namespace UnitTestingProject.Controllers
 {
     public class HomeController : Controller
     {
-        public IRepository Repository = SimpleRepository.ShaRepository;
+        public IRepository Repository = SimpleRepository.Repository;
 
         public IActionResult Index()
-            => View(SimpleRepository.ShaRepository.Products);
+            => View(SimpleRepository.Repository.Products);
 
         [HttpGet]
         public IActionResult AddProduct() => View(new Product());

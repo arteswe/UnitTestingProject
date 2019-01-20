@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.IdentityModel.Tokens;
+﻿using System.Collections.Generic;
 
 namespace UnitTestingProject.Models
 {
     public class SimpleRepository : IRepository
     {
         private static SimpleRepository sharedRepository = new SimpleRepository();
-        public static SimpleRepository ShaRepository => sharedRepository;
+        public static SimpleRepository Repository => sharedRepository;
         private Dictionary<string, Product> products = new Dictionary<string, Product>();
 
         public SimpleRepository()
